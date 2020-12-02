@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <!-- <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet"> -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
+  <link rel="stylesheet" href="css/style.css">
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.20.0/axios.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" -->
+          <!-- integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ=="
+          crossorigin="anonymous"></script> -->
+  <title>Netflix</title>
+</head>
+
+<body>
+  <div id="app">
+
+    <!--   NAVBAR INIZIALE   -->
+    <nav class="navbar">
+      <div class="logo">
+        <h1>NETFLIX</h1>
+      </div>
+      <div class="search_box">
+        <input type="text" placeholder="Inserisci un film o serie tv.." v-model="search_film" @keyup.enter="addFilm">
+        <button type="button" name="button" @click="addFilm">Cerca</button>
+      </div>
+    </nav>
+
+    <!--   CONTENITORE PAGINA   -->
+    <div class="container">
+      <div class="film" v-for="film in films">
+        <div class="titolo">
+          {{film.title}}
+        </div>
+        <div class="titolo_originale">
+          {{film.original_title}}
+        </div>
+        <div class="lingua">
+          {{film.original_language}}
+        </div>
+        <div class="voto">
+          {{film.vote_average}}
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+<script src="js/script.js"></script>
+</body>
+
+</html>
