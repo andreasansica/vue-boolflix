@@ -44,7 +44,11 @@ var app = new Vue({
 
     //   RIPRISTINO OUTPUT IN CASO DI NUOVA RICERCA
     this.films = "";
-  }
+  },
+
+  //   FUNZIONE PER METTERE COPERTINA RANDOM SE NON ESISTE
+  random: function(){
+   event.target.src = "img/random.jpg"  }
 }
 
 

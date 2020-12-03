@@ -33,6 +33,9 @@
 
       <!--   FILM   -->
       <div class="film" v-for="film in films">
+        <div class="copertina">
+          <img :src='"https://image.tmdb.org/t/p/w185/" + film.backdrop_path' @error="random">
+        </div>
         <div class="titolo">
           Titolo: {{film.title}}
         </div>
@@ -50,6 +53,9 @@
 
       <!--   SERIE TV   -->
       <div class="film" v-for="serie in serieTV">
+        <div class="copertina">
+          <img :src='"https://image.tmdb.org/t/p/w185/" + serie.backdrop_path' @error="random">
+        </div>
         <div class="titolo">
           Titolo: {{serie.name}}
         </div>
