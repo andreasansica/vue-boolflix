@@ -14,6 +14,7 @@ var app = new Vue({
 
 
 
+
   methods:{
 
     //   CERCO I FILM CON L'INPUT
