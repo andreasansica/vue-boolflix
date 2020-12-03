@@ -49,10 +49,16 @@
   background-color: grey;
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
+  justify-content: flex-start;
 }
 .film{
   margin-top: 100px;
   width: 30%;
+}
+.star_color{
+  color: yellow;
+}
+.lingua img{
+  height: 30px;
+  width: 30px;
 }

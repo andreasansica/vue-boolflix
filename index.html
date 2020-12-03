@@ -30,18 +30,38 @@
 
     <!--   CONTENITORE PAGINA   -->
     <div class="container">
+
+      <!--   FILM   -->
       <div class="film" v-for="film in films">
         <div class="titolo">
-          {{film.title}}
+          Titolo: {{film.title}}
         </div>
         <div class="titolo_originale">
-          {{film.original_title}}
+          Titolo originale: {{film.original_title}}
         </div>
         <div class="lingua">
-          {{film.original_language}}
+          Lingua: <img :src='"img/bandiere/" + film.original_language + ".svg"' >
         </div>
-        <div class="voto">
-          {{film.vote_average}}
+        <div class="stelle_voto">
+          Voto:
+          <i class="fas fa-star"  v-for="(element, index) in voto" :class=" index <= (film.vote_average) ? 'star_color' : '' "></i>
+        </div>
+      </div>
+
+      <!--   SERIE TV   -->
+      <div class="film" v-for="serie in serieTV">
+        <div class="titolo">
+          Titolo: {{serie.name}}
+        </div>
+        <div class="titolo_originale">
+          Titolo originale: {{serie.original_name}}
+        </div>
+        <div class="lingua">
+          Lingua: <img :src='"img/bandiere/" + serie.original_language + ".svg"' >
+        </div>
+        <div class="stelle_voto">
+          Voto:
+          <i class="fas fa-star"  v-for="(element, index) in voto" :class=" index <= (serie.vote_average) ? 'star_color' : '' "></i>
         </div>
       </div>
     </div>
