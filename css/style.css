@@ -5,7 +5,7 @@
   font-family: 'Lato';
 }
 
-/*   PARTE SUPERIORE */
+/*   PARTE SUPERIORE   */
 .navbar{
   display: flex;
   justify-content: space-between;
@@ -47,7 +47,7 @@
 /*   CONTEINER CENTRALE */
 .container{
   min-height:700px;
-  background-color: grey;
+  background-color: black;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
@@ -85,12 +85,23 @@
   white-space: nowrap;
 }
 
+.titolo{
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  margin-top: -40px;
+  width: 100%;
+}
+.titolo p{
+  font-size: 20px;
+  font-weight: bold;
+}
+
+/*   DESCRIZIONE FILM   */
 .star_color{
   color: yellow;
 }
-.titolo{
-  display: flex;
-}
+
 .titolo_originale{
   display: flex;
 }
@@ -103,7 +114,6 @@
 .overview{
   display: flex;
 }
-/*    MILESTONE 4   */
 
 .over{
   display: none;

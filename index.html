@@ -33,50 +33,37 @@
     <!--   CONTENITORE PAGINA   -->
     <div class="container">
 
-      <!--   FILM   -->
-      <div class="film" v-for="film in films">
-          <img :src='"https://image.tmdb.org/t/p/w342/" + film.backdrop_path' @error="random">
+      <!--           FILM                  -->
+      <div class="film" v-for="item in film_serie">
+
+        <!--   IMMAGINE OUTPUT   -->
+          <img :src='"https://image.tmdb.org/t/p/w342/" + item.backdrop_path' @error="random">
+
+          <div class="titolo">
+            <p>{{item.title}} {{item.name}}</p>
+          </div>
+
+
+          <!--   DESCIZIONE FILM HOVER  -->
           <div class="over">
-            <div class="titolo">
-              <h1>Titolo: </h1><p>{{film.title}}</p>
-            </div>
+
             <div class="titolo_originale">
-              <h1>Titolo originale: </h1><p>{{film.original_title}}</p>
+              <h1>Titolo originale: </h1><p>{{item.original_title}} {{item.original_name}}</p>
             </div>
+
             <div class="lingua">
-            <h1>Lingua: </h1><img :src='"img/bandiere/" + film.original_language + ".svg"' >
+            <h1>Lingua: </h1><img :src='"img/bandiere/" + item.original_language + ".svg"' >
             </div>
+
             <div class="stelle_voto">
             <h1> Voto: </h1>
-              <i class="fas fa-star"  v-for="(element, index) in 5" :class=" index <= (film.vote_average) ? 'star_color' : '' "></i>
+              <i class="fas fa-star"  v-for="(element, index) in 5" :class=" index <= (item.vote_average) ? 'star_color' : '' "></i>
             </div>
+
             <div class="overview">
-              <h1>Overview: </h1> <p>{{film.overview}}</p>
+              <h1>Overview: </h1> <p>{{item.overview}}</p>
             </div>
         </div>
-      </div>
-
-      <!--   SERIE TV   -->
-      <div class="film" v-for="serie in serieTV">
-          <img :src='"https://image.tmdb.org/t/p/w342/" + serie.backdrop_path' @error="random">
-          <div class="over">
-            <div class="titolo">
-              <h1>Titolo: </h1><p>{{serie.name}}</p>
-            </div>
-            <div class="titolo_originale">
-              <h1>Titolo originale: </h1>  <p>{{serie.original_name}}</p>
-            </div>
-            <div class="lingua">
-              <h1>Lingua: </h1><img :src='"img/bandiere/" + serie.original_language + ".svg"' >
-            </div>
-            <div class="stelle_voto">
-              <h1>Voto: </h1>
-              <i class="fas fa-star"  v-for="(element, index) in voto" :class=" index <= (serie.vote_average) ? 'star_color' : '' "></i>
-            </div>
-            <div class="overview">
-              <h1>Overview: </h1> <p>{{serie.overview}}</p>
-            </div>
-          </div>
       </div>
     </div>
   </div>

@@ -14,15 +14,23 @@ var app = new Vue({
 
 
 
+  computed: {
+
+    //   UNISCO LE CHIAMATE
+    film_serie: function () {
+      return [...this.films,...this.serieTV];
+    }
+  },
+
 
   methods:{
 
     //   CERCO I FILM CON L'INPUT
     addFilm: function(){
+
       axios.get(apiFilm + this.search_film)
       .then(risposta =>{
         this.films = risposta.data.results;
-        this.search_film = "";
 
         //   METTO IL VOTO DA 1 A 5 DIVIDENDOLO PER 2
         this.films.forEach(element =>{
@@ -45,11 +53,14 @@ var app = new Vue({
 
     //   RIPRISTINO OUTPUT IN CASO DI NUOVA RICERCA
     this.films = "";
+
   },
 
   //   FUNZIONE PER METTERE COPERTINA RANDOM SE NON ESISTE
   random: function(){
    event.target.src = "img/random.jpg"  }
+
+
 }
 
 
